@@ -45,33 +45,33 @@ Na versão original, a moeda de R$ 1 permite compor qualquer valor inteiro posit
 
 **Resultado:** saque realizado com uma nota de R$ 50; saldo restante de R$ 950.
 
-![Evidência do teste 01: saque de R$ 50](images/teste_01.png)
+![Evidência do teste 01: saque de R$ 50](image/teste_01.png)
 
-[Ver imagem do teste 01](images/teste_01.png)
+[Ver imagem do teste 01](image/teste_01.png)
 
 ### Teste 02 — Saque de R$ 95
 
 **Resultado:** uma nota de R$ 50, duas notas de R$ 20 e uma nota de R$ 5; saldo restante de R$ 905.
 
-![Evidência do teste 02: saque de R$ 95](images/teste_02.png)
+![Evidência do teste 02: saque de R$ 95](image/teste_02.png)
 
-[Ver imagem do teste 02](images/teste_02.png)
+[Ver imagem do teste 02](image/teste_02.png)
 
 ### Teste 03 — Saque de R$ 123
 
 **Resultado:** uma nota de R$ 100, uma nota de R$ 20, uma nota de R$ 2 e uma moeda de R$ 1; saldo restante de R$ 877.
 
-![Evidência do teste 03: saque de R$ 123](images/teste_03.png)
+![Evidência do teste 03: saque de R$ 123](image/teste_03.png)
 
-[Ver imagem do teste 03](images/teste_03.png)
+[Ver imagem do teste 03](image/teste_03.png)
 
 ### Teste 04 — Saque de R$ 1.005
 
 **Resultado:** operação recusada por saldo insuficiente.
 
-![Evidência do teste 04: saque de R$ 1.005](images/teste_04.png)
+![Evidência do teste 04: saque de R$ 1.005](image/teste_04.png)
 
-[Ver imagem do teste 04](images/teste_04.png)
+[Ver imagem do teste 04](image/teste_04.png)
 
 ## 6. Conclusão
 
