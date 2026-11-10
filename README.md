@@ -18,8 +18,8 @@ O sistema apresenta as seguintes funcionalidades:
 - **Solicitação de saque:** entrada de valores inteiros pelo usuário.
 - **Validação de entrada:** verificação de valores inválidos.
 - **Verificação de saldo:** bloqueio de operações superiores ao saldo disponível.
-- **Distribuição de cédulas:** cálculo automático das notas necessárias para o saque.
-- **Validação de disponibilidade:** verificação da possibilidade de formar o valor solicitado com as cédulas disponíveis.
+- **Distribuição de cédulas e moedas:** cálculo automático das denominações necessárias para o saque.
+- **Composição do valor solicitado:** distribuição de qualquer valor inteiro positivo dentro do saldo, utilizando também a moeda de R$ 1.
 - **Atualização de saldo:** desconto do valor sacado após uma operação válida.
 - **Tratamento de erros:** apresentação de mensagens para operações não permitidas.
 
@@ -33,8 +33,9 @@ O sistema apresenta as seguintes funcionalidades:
 | 10 | R$ 10 |
 | 5 | R$ 5 |
 | 2 | R$ 2 |
+| Moeda de 1 | R$ 1 |
 
-O sistema utiliza exclusivamente essas denominações, sem moedas.
+O sistema utiliza as cédulas acima e a moeda de R$ 1, permitindo compor qualquer valor inteiro positivo dentro do saldo disponível.
 
 ---
 
@@ -79,7 +80,7 @@ O programa verifica se o valor informado é válido, se existe saldo suficiente 
 
 **4. Distribuição das cédulas**
 
-Após a validação, o algoritmo calcula uma combinação de notas que corresponde ao valor solicitado.
+Após a validação, o algoritmo calcula uma combinação de cédulas e, quando necessário, moedas de R$ 1 que corresponde ao valor solicitado.
 
 **5. Atualização do saldo**
 
@@ -148,7 +149,7 @@ Os testes têm como objetivo verificar o comportamento do programa em diferentes
 | Valor inválido | R$ 0 | Operação recusada |
 | Valor negativo | R$ -10 | Operação recusada |
 
-O cenário de R$ 123 exige uma combinação alternativa de cédulas, pois a distribuição direta pelas maiores denominações deixaria um restante de R$ 1.
+No cenário de R$ 123, o programa distribui 1 nota de R$ 100, 1 nota de R$ 20, 1 nota de R$ 2 e 1 moeda de R$ 1.
 
 ---
 
