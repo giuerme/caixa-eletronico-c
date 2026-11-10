@@ -1,6 +1,6 @@
 # Sistema de Caixa Eletrônico em C
 
-## Sobre o Projeto
+# Sobre o Projeto
 
 O **Sistema de Caixa Eletrônico** é um projeto acadêmico desenvolvido em linguagem C durante a graduação em Ciência da Computação, como parte de uma atividade prática universitária.
 
