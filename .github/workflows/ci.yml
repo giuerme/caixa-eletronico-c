@@ -1,0 +1,63 @@
+name: CI - Caixa Eletronico em C
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compilar-e-testar:
+    name: Compilar e executar testes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo do repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar o programa com GCC
+        run: |
+          gcc -std=c11 -Wall -Wextra -pedantic -Werror \
+            caixa_eletronico_em_c.c -o caixa_eletronico
+
+      - name: Testar saques e entradas invalidas
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          testar() {
+            local entrada="$1"
+            local esperado="$2"
+            local saida
+            saida=$(printf '%s\n' "$entrada" | ./caixa_eletronico)
+            if ! grep -Fq -- "$esperado" <<< "$saida"; then
+              echo "FALHA: entrada $entrada"
+              echo "Esperado: $esperado"
+              echo "Obtido:"
+              echo "$saida"
+              exit 1
+            fi
+            echo "OK: entrada $entrada"
+          }
+
+          testar "50" "1 nota(s) de R$ 50"
+          testar "95" "1 nota(s) de R$ 5"
+          testar "123" "1 moeda(s) de R$ 1"
+          testar "1005" "Erro: saldo insuficiente."
+          testar "0" "Erro: valor de saque invalido."
+          testar "-10" "Erro: valor de saque invalido."
+
+          # O programa retorna codigo 1 para entrada nao numerica.
+          set +e
+          saida=$(printf 'abc\n' | ./caixa_eletronico)
+          status=$?
+          set -e
+          if [[ "$status" -ne 1 ]] || ! grep -Fq "Erro: digite um numero inteiro." <<< "$saida"; then
+            echo "FALHA: entrada nao numerica"
+            exit 1
+          fi
+          echo "OK: entrada nao numerica"
