@@ -4,8 +4,6 @@
 
 Documentar os testes de execução do simulador de caixa eletrônico desenvolvido em linguagem C como atividade prática universitária. O programa verifica o valor solicitado e o saldo disponível, distribui as denominações de R$ 100, R$ 50, R$ 20, R$ 10, R$ 5, R$ 2 e moeda de R$ 1, e atualiza o saldo após um saque válido.
 
-> **Versão documentada:** este relatório reproduz os testes e o comportamento registrados no PDF original. O código extraído desse PDF **ainda utiliza moeda de R$ 1**. Se o repositório usar a versão modificada sem essa moeda, será necessário atualizar os testes e as capturas para que correspondam à implementação publicada.
-
 ## 2. Sequência lógica
 
 1. Declarar saldo, valor solicitado, valor restante e contadores de denominações.
