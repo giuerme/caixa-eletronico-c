@@ -23,7 +23,7 @@ O sistema apresenta as seguintes funcionalidades:
 - **Atualização de saldo:** desconto do valor sacado após uma operação válida.
 - **Tratamento de erros:** apresentação de mensagens para operações não permitidas.
 
-### Cédulas disponíveis
+### Cédulas e moedas disponíveis
 
 | Cédula | Valor |
 |---|---|
